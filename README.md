@@ -13,7 +13,7 @@ An implementation of some of the code samples provided from the Osoyoo NodeMCU S
 <img src="img/NodeMCU_v0.9_Pinout.png">
 
 
-## Lesson 1 - Install the ESP8266 Board Package and the Serial Port Driver
+## Lesson 0 - Install the ESP8266 Board Package and the Serial Port Driver
 
 So what I realized quickly is that the ESP8266 that I purchased comes pre-flashed with a Lua interpreter onboard. Almost all tutorials are telling me that we should go ahead and flash it so we can use the Arduino IDE. 
 
@@ -42,3 +42,34 @@ To do this, open up Arduino IDE and set the following config values
 * Port: *Select your Port* - mine was `COM3`
 
 <img src="img/config.jpg">
+
+## Lesson 1 - Hello World
+
+Hello World is pretty easy on this controller, the code is located in `/lessons/1-hello-world`. 
+
+```c
+void setup() {
+  // put your setup code here, to run once:
+  // Configure the serial baud rate to be the same as whats configured in the Ardunio IDE..
+  Serial.begin(115200);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  Serial.println("Hello world!");
+  delay(5000); // delay for 5s
+}
+```
+
+
+## Lesson 2 - Blinking an LED
+
+The first task was to blink the onboard LED. To do this, we just have to set pin D1 to `OUTPUT` mode, then in our main loop, then toggle this from `HIGH` to `LOW` to represent on and off.
+
+I found the tutorial doesn't really explain the constants being used in the lib, so a quick google search led me to the official Arduino reference!
+
+https://www.arduino.cc/reference/en/language/variables/constants/constants/
+
+The context of `HIGH` and `LOW` depends on whether or not you have your pin set to `INPUT` or `OUTPUT`
+
+### 2A - Blinking an external LED 
