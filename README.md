@@ -73,3 +73,5 @@ https://www.arduino.cc/reference/en/language/variables/constants/constants/
 The context of `HIGH` and `LOW` depends on whether or not you have your pin set to `INPUT` or `OUTPUT`
 
 ### 2A - Blinking an external LED 
+
+<img src="img/lesson-2-led.jpg">
