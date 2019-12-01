@@ -1,5 +1,7 @@
+#define OUTPUT_LED_PIN D1   // (GPI05)
 #define INPUT_BUTTON_PIN D2 // (GPI04)
 
+int shouldTurnLightsOn = 0;
 int currentState = 0;
 int previousState = 0;
 
@@ -21,9 +23,11 @@ void loop()
     if (currentState == HIGH)
     {
       // toggle
+      shouldTurnLightsOn = !shouldTurnLightsOn;
     }
   }
 
+  if (shouldTurnLightsOn)
   {
     digitalWrite(OUTPUT_LED_PIN, HIGH);
   }
