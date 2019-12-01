@@ -75,3 +75,14 @@ The context of `HIGH` and `LOW` depends on whether or not you have your pin set 
 ### 2A - Blinking an external LED 
 
 <img src="img/lesson-2-led.jpg">
+
+## Lesson 3 - Control an LED via a button switch
+
+#### Prep
+* NodeMCU
+* 1 Push Button 
+* 1 LED
+* 10K ohm resistor
+* 200 ohm resistor
+
+We're going to need 2 GPIO pins, one for input of the button and the other for output to switch on the LED.
